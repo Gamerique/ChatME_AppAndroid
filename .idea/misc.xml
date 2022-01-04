@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Codings &amp; Programming/Android Studio/ChatME/app/src/main/res/layout/activity_download.xml" value="0.20677083333333332" />
+        <entry key="..\:/Codings &amp; Programming/Android Studio/ChatME/app/src/main/res/drawable/rect_boundary.xml" value="0.23697916666666666" />
+        <entry key="..\:/Codings &amp; Programming/Android Studio/ChatME/app/src/main/res/layout/activity_download.xml" value="0.25" />
+        <entry key="..\:/Codings &amp; Programming/Android Studio/ChatME/app/src/main/res/layout/activity_main.xml" value="0.22083333333333333" />
         <entry key="..\:/Codings &amp; Programming/Android Studio/ChatME/app/src/main/res/layout/activity_sign_in.xml" value="0.20677083333333332" />
         <entry key="..\:/Codings &amp; Programming/Android Studio/ChatME/app/src/main/res/layout/activity_sign_up.xml" value="0.22083333333333333" />
         <entry key="..\:/Codings &amp; Programming/Android Studio/ChatME/app/src/main/res/layout/activity_splash.xml" value="0.22083333333333333" />

@@ -65,6 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginRight="10dp"
+                android:background="@drawable/rect_boundary"
                 android:ems="10"
                 android:hint="Rishi Raj"
                 android:hintTextColor="#7B1FA2"
@@ -92,10 +93,11 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/etEmail"
+                android:id="@+id/etEmailSignup"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginRight="10dp"
+                android:background="@drawable/rect_boundary"
                 android:ems="10"
                 android:hint="abcxyz@gmail.com"
                 android:hintTextColor="#7B1FA2"
@@ -136,18 +138,19 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/etPhone"
+                    android:id="@+id/etPhoneSignup"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="10dp"
+                    android:background="@drawable/rect_boundary"
                     android:ems="10"
                     android:hint="1234567890"
                     android:inputType="phone" />
             </LinearLayout>
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/btnOTP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
@@ -162,6 +165,7 @@
                 android:layout_height="50dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="120dp"
+                android:background="@drawable/rect_boundary"
                 android:ems="10"
                 android:hint="Enter OTP"
                 android:inputType="number" />
@@ -187,12 +191,14 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/etPassword"
+                android:id="@+id/etPasswordSignup"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginRight="50dp"
+                android:background="@drawable/rect_boundary"
                 android:ems="10"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                tools:ignore="SpeakableTextPresentCheck" />
 
         </LinearLayout>
 
