@@ -68,8 +68,8 @@
                 android:background="@drawable/rect_boundary"
                 android:ems="10"
                 android:hint="Rishi Raj"
-                android:hintTextColor="#7B1FA2"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textColorHint="@color/hint_color" />
 
         </LinearLayout>
 
@@ -98,10 +98,11 @@
                 android:layout_height="50dp"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/rect_boundary"
+                android:drawableStart="@drawable/icon_email_24"
                 android:ems="10"
                 android:hint="abcxyz@gmail.com"
-                android:hintTextColor="#7B1FA2"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:textColorHint="@color/hint_color" />
         </LinearLayout>
 
         <LinearLayout
@@ -144,9 +145,11 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="10dp"
                     android:background="@drawable/rect_boundary"
+                    android:drawableStart="@drawable/ic_phone_24"
                     android:ems="10"
                     android:hint="1234567890"
-                    android:inputType="phone" />
+                    android:inputType="phone"
+                    android:textColorHint="@color/hint_color" />
             </LinearLayout>
 
             <Button
@@ -168,7 +171,8 @@
                 android:background="@drawable/rect_boundary"
                 android:ems="10"
                 android:hint="Enter OTP"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textColorHint="@color/hint_color" />
         </LinearLayout>
 
         <LinearLayout
@@ -197,6 +201,7 @@
                 android:layout_marginRight="50dp"
                 android:background="@drawable/rect_boundary"
                 android:ems="10"
+                android:drawableStart="@drawable/icon_password_24"
                 android:inputType="textPassword"
                 tools:ignore="SpeakableTextPresentCheck" />
 

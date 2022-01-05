@@ -24,16 +24,16 @@ public class DownloadActivity extends AppCompatActivity {
         btnSignInPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DownloadActivity.this, SignInActivity.class);
-                startActivity(intent);
+                Intent signInPage = new Intent(DownloadActivity.this, SignInActivity.class);
+                startActivity(signInPage);
             }
         });
 
         btnSignUpPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DownloadActivity.this, SignUpActivity.class);
-                startActivity(intent);
+                Intent sugnUpPage = new Intent(DownloadActivity.this, SignUpActivity.class);
+                startActivity(sugnUpPage);
             }
         });
     }
