@@ -52,9 +52,11 @@
             android:layout_marginTop="8dp"
             android:layout_marginRight="15dp"
             android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/purple_500"
             android:padding="15dp"
             android:shadowRadius="10"
             android:text="LOGIN"
+            android:textColor="@android:color/holo_red_light"
             android:textSize="20sp" />
 
         <Button
@@ -65,8 +67,10 @@
             android:layout_marginTop="8dp"
             android:layout_marginRight="15dp"
             android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/purple_700"
             android:padding="15dp"
             android:text="Sign UP"
+            android:textColor="@android:color/holo_red_light"
             android:textSize="20sp" />
     </LinearLayout>
 
@@ -84,6 +88,8 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:gravity="bottom|end"
             android:text="Developed by Rishi Raj"
             android:textColor="#F11D1D"
             android:textSize="26sp"
