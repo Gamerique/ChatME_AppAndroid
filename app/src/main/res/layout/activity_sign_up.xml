@@ -163,46 +163,6 @@
                     android:textColorHint="@color/hint_color" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/btnResendOTP"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:backgroundTint="#FA1563"
-                    android:text="Resend OTP"
-                    android:visibility="invisible" />
-
-                <Button
-                    android:id="@+id/btnOTP"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginRight="20dp"
-                    android:backgroundTint="#FA1563"
-                    android:text="Get OTP"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
-
-            <EditText
-                android:id="@+id/etOTP"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="120dp"
-                android:background="@drawable/rect_boundary"
-                android:ems="10"
-                android:hint="Enter OTP"
-                android:inputType="number"
-                android:paddingLeft="8dp"
-                android:textColor="@android:color/holo_red_dark"
-                android:textColorHint="@color/hint_color" />
         </LinearLayout>
 
         <LinearLayout

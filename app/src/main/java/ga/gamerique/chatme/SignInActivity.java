@@ -1,65 +1,74 @@
 package ga.gamerique.chatme;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+
+import ga.gamerique.chatme.databinding.ActivitySignInBinding;
 
 public class SignInActivity extends AppCompatActivity {
 
-    EditText lEmail, lPassword;
-    Button btnSignIn;
-    private FirebaseAuth mAuth;
+    Boolean validFields = true;
+    private FirebaseAuth fAuth;
+    ActivitySignInBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_in);
+        binding = ActivitySignInBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        mAuth = FirebaseAuth.getInstance();
-    }
+        getSupportActionBar().hide();
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            Toast.makeText(SignInActivity.this, "Welcome Again!", Toast.LENGTH_SHORT).show();;
-            Intent dashboard = new Intent(SignInActivity.this, MainActivity.class);
-            startActivity(dashboard);
-            finish();
-        }
-        else btnSignIn.setOnClickListener(new View.OnClickListener() {
+        fAuth = FirebaseAuth.getInstance();
+
+        binding.btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mAuth.signInWithEmailAndPassword(lEmail.getText().toString(), lPassword.getText().toString())
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    // Sign in success, update UI with the signed-in user's information
-                                    Toast.makeText(SignInActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
-                                    Intent dashboard = new Intent(SignInActivity.this, MainActivity.class);
-                                    startActivity(dashboard);
-                                } else {
-                                    // If sign in fails, display a message to the user.
-                                    Toast.makeText(SignInActivity.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
+                emptyFields(binding.etEmailLogin);
+                emptyFields(binding.etPasswordLogin);
+
+                if (validFields){
+
+                    fAuth.signInWithEmailAndPassword(binding.etEmailLogin.getText().toString(), binding.etPasswordLogin.getText().toString())
+                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()){
+                                        Toast.makeText(SignInActivity.this, "Welcome Sir!!", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                    else {
+                                        Toast.makeText(SignInActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                    }
                                 }
-                            }
-                        });
+                            });
+                }
             }
         });
+    }
+
+
+    public void emptyFields(EditText field){
+        if (field.getText().toString().isEmpty()){
+            field.setError("Required");
+            validFields = false;
+        }
+        else {
+            validFields = true;
         }
     }
+
+}

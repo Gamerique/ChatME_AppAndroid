@@ -26,6 +26,7 @@ public class DownloadActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent signInPage = new Intent(DownloadActivity.this, SignInActivity.class);
                 startActivity(signInPage);
+                finish();
             }
         });
 
@@ -34,6 +35,7 @@ public class DownloadActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent sugnUpPage = new Intent(DownloadActivity.this, SignUpActivity.class);
                 startActivity(sugnUpPage);
+                finish();
             }
         });
     }

@@ -34,7 +34,6 @@ public class SplashActivity extends AppCompatActivity {
                 finally {
                     FirebaseUser currentUser = fAuth.getCurrentUser();
                     if(currentUser != null){
-                        Toast.makeText(SplashActivity.this, "Welcome Again!", Toast.LENGTH_SHORT).show();;
                         Intent dashboard = new Intent(SplashActivity.this, MainActivity.class);
                         startActivity(dashboard);
                         finish();
