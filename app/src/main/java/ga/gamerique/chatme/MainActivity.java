@@ -10,27 +10,23 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import ga.gamerique.chatme.Adapters.FragmentsAdapter;
+import ga.gamerique.chatme.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
 
-    Button logout;
+    ActivityMainBinding binding;
     FirebaseAuth fAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding  = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        fAuth = FirebaseAuth.getInstance();
 
-        logout = findViewById(R.id.button);
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        binding.viewPager.setAdapter(new FragmentsAdapter(getSupportFragmentManager()));
+        binding.tabLayout.setupWithViewPager(binding.viewPager);
 
-                FirebaseAuth.getInstance().signOut();
-                Toast.makeText(MainActivity.this, "You Logout Successfully!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, SignInActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
     }
 }

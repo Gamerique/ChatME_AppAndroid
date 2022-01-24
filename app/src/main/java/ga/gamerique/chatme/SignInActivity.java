@@ -58,6 +58,33 @@ public class SignInActivity extends AppCompatActivity {
                 }
             }
         });
+
+        binding.etForgetPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (binding.etEmailLogin.getText().toString().isEmpty()){
+                    binding.etEmailLogin.setError("Required");
+                }
+                else {
+                    forgetPassword();
+                }
+            }
+        });
+    }
+
+    private void forgetPassword() {
+        fAuth.sendPasswordResetEmail(binding.etEmailLogin.getText().toString()).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()){
+                    Toast.makeText(SignInActivity.this, "Check Your Email to Reset the Password", Toast.LENGTH_SHORT).show();
+
+                }
+                else {
+                    Toast.makeText(SignInActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
 

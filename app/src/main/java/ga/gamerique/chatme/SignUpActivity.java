@@ -15,6 +15,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Objects;
+
 import ga.gamerique.chatme.databinding.ActivitySignUpBinding;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -31,7 +33,7 @@ public class SignUpActivity extends AppCompatActivity {
         binding = ActivitySignUpBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
         fAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
@@ -47,7 +49,6 @@ public class SignUpActivity extends AppCompatActivity {
                 emptyFields(binding.etPasswordSignup);
 
                 if (validFields && binding.etPhoneSignup.length() ==10) {
-
 
                     fAuth.createUserWithEmailAndPassword
                             (binding.etEmailSignup.getText().toString(), binding.etPasswordSignup.getText().toString())
@@ -69,12 +70,16 @@ public class SignUpActivity extends AppCompatActivity {
                                         finish();
 
 
-                                    } else {
-                                        Toast.makeText(SignUpActivity.this, (CharSequence) task.getException(), Toast.LENGTH_SHORT).show();
+                                    }
+                                    else {
+                                        Toast.makeText(SignUpActivity.this, "Account not created", Toast.LENGTH_SHORT).show();
                                     }
 
                                 }
                             });
+                }
+                else {
+                    Toast.makeText(SignUpActivity.this, "Please Input Valid Phone Number", Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -8,8 +8,8 @@ public class Users {
         this.profilePic = profilePic;
         this.userName = userName;
         this.userMail = userMail;
+        this.userMail = userPassword;
         this.userPhone = userPhone;
-        this.userPassword = userPassword;
         this.userID = userID;
         this.lastMessage = lastMessage;
     }
@@ -17,12 +17,20 @@ public class Users {
     public Users(){}
 
 
+    public String getUserPassword() {
+        return userPassword;
+    }
+
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
+    }
+
     // SignUp Constructor
     public Users(String userName, String userMail, String userPhone, String userPassword) {
         this.userName = userName;
         this.userMail = userMail;
         this.userPhone = userPhone;
-        this.userPassword = userPassword;
+        this.userPhone = userPassword;
     }
 
 
@@ -48,14 +56,6 @@ public class Users {
 
     public void setUserMail(String userMail) {
         this.userMail = userMail;
-    }
-
-    public String getUserPassword() {
-        return userPassword;
-    }
-
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
     }
 
     public String getUserID() {
